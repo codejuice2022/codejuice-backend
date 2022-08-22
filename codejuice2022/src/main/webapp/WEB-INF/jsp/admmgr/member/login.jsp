@@ -17,11 +17,9 @@
 
     <!-- Custom styles for this template-->
     <link href="/common/css/sb-admin-2.min.css" rel="stylesheet">
-    
+
 	<script type="text/javascript">
 		function fn_Login(){
-			console.log("ddd")
-	
 			if( $("#userId").val() == "" ){
 				alert("아이디를 입력해 주세요.");
 				$("#userId").focus();
@@ -33,9 +31,7 @@
 				return false;
 			}
 			$("#frm").submit();
-			
-		} 
-		
+		}
 	</script>
 </head>
 <body class="bg-gradient-primary">
@@ -63,9 +59,6 @@
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user" id="userPw" name="userPw" placeholder="Password">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control form-control-user" id="dd" name="dd" >
                                         </div>
                                         <div class="form-group">
                                             <!-- <div class="custom-control custom-checkbox small">

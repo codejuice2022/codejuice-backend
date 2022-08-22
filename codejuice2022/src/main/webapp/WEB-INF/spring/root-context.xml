@@ -4,14 +4,15 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
- <bean id="dataSource"
+	<!-- MySQL dataSource -->    
+    <bean id="dataSource"
         class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
         <property name="url" value="jdbc:mysql://codejuice.cj37miwj1alp.ap-northeast-2.rds.amazonaws.com:3306/codejuice?useSSL=false"></property>
         <property name="username" value="codejuice"></property>
         <property name="password" value="codejuice1234"></property>
-    </bean> 
- 
+    </bean>      
+    
     <bean id="sqlSessionFactory"
 		class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource"></property>
@@ -26,5 +27,5 @@
 	<bean id="sqlSession"
 		class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg  ref="sqlSessionFactory"></constructor-arg>
-	</bean>	
+	</bean>		
 </beans>

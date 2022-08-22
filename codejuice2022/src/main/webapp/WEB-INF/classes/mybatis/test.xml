@@ -4,7 +4,7 @@
 
 <mapper namespace="test">
 
-	<select id="selectTest" resultType="kr.com.webservice.vo.testVO">
+	<select id="selectTest" resultType="kr.co.webservice.vo.testVO">
 		SELECT count(*) 'ID' FROM TB_ADMIN
  	</select>
 
