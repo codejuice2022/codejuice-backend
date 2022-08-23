@@ -7,15 +7,17 @@
  	
  	<select id="selectUserScore" parameterType="java.util.Map"  resultType="map">
 		SELECT
-		   A.USER_NM,
-		   A.USER_HP,
-		   B.CENTER_INFO,
-		   B.GAME_SCORE,
-		   B.REG_DT
-		FROM TB_USER A
-		LEFT OUTER JOIN TB_USER_GAME_SCORE B
-		ON A.USER_HP = B.USER_HP
-		WHERE 1=1
+         A.USER_NM,
+         A.USER_HP,
+         B.CENTER_INFO,
+         B.GAME_SCORE,
+         B.REG_DT,
+         DATE_FORMAT(B.REG_DT,'%Y-%m-%d') AS REG_DTM
+      FROM TB_USER A
+      LEFT OUTER JOIN TB_USER_GAME_SCORE B
+      ON A.USER_HP = B.USER_HP
+      WHERE 1=1
+      ORDER BY B.REG_DT DESC
 		
  	</select>
  	

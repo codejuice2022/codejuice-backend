@@ -1,4 +1,4 @@
-package kr.co.admmgr.member;
+package kr.co.admmgr.member.impl;
 
 import java.util.Map;
 import java.util.List;

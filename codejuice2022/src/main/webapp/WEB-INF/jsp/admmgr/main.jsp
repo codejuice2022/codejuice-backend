@@ -45,10 +45,6 @@
           border-color: #5F0080;
       }
    </style>
-   <script>
-   		console.log("ddd")
-   		console.log(resultMap)
-   </script>
 </head>
 
 <body id="page-top">
@@ -332,6 +328,7 @@
                                         <tr>
                                             <th>번호</th>
                                             <th>지원자명</th>
+                                            <th>지원자 번호</th>
                                             <th>지원센터</th>
                                             <th>게임점수</th>
                                             <th>통과여부</th>
@@ -350,14 +347,20 @@
                                     </tfoot> -->
                                     <!-- 그리드 -->
                                     <tbody>
-                                       <c:forEach begin="1" end="1000" varStatus="status">
+                                       <c:forEach items="${rList}" var="rList" varStatus="status">
                                           <tr>
                                              <td><c:out value="${status.index}"/></td>
-                                             <td>이름<c:out value="${status.index}"/></td>
-                                             <td>지원센터<c:out value="${status.index}"/></td>
-                                             <td>게임점수<c:out value="${status.index}"/></td>
-                                             <td>통과여부<c:out value="${status.index}"/></td>
-                                             <td>완료일<c:out value="${status.index}"/></td>
+                                             <td><c:out value="${rList.USER_NM}"/></td>
+                                             <td><c:out value="${rList.USER_HP}"/></td>
+                                             <td><c:out value="${rList.CENTER_INFO}"/></td>
+                                             <td><c:out value="${rList.GAME_SCORE}"/></td>
+                                             <td>
+                                                <c:choose>
+                                                   <c:when test="${rList.GAME_SCORE >= 10}">통과</c:when>
+                                                   <c:otherwise>실패</c:otherwise>
+                                                </c:choose>
+                                             </td>
+                                             <td><c:out value="${rList.REG_DTM}"/></td>
                                           </tr>
                                        </c:forEach>
                                     </tbody>

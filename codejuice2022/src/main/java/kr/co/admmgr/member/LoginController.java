@@ -1,5 +1,6 @@
 package kr.co.admmgr.member;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -16,6 +17,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import kr.co.admmgr.member.impl.LoginService;
 
 
 /**
@@ -46,13 +49,14 @@ public class LoginController {
 	@RequestMapping(value = "/LoginProc.do")
 	public ModelAndView LoginProc(HttpServletRequest request, HttpServletResponse response, ModelMap modelMap) throws Exception {
 		
-		Map<String, Object> map = new HashMap<String, Object>();
-		Map<String, Object> resultMap = new HashMap<String, Object>();
-		resultMap.put("result", loginService.selectUserScoer(modelMap));
-						
-		ModelAndView mav = new ModelAndView();
-		mav.setViewName("admmgr/main");
-		mav.addObject(resultMap);
+		List<Map<String, Object>> rList = new ArrayList<Map<String,Object>>();
+	    Map<String, Object> resultMap = new HashMap<String, Object>();
+	    rList = loginService.selectUserScoer(modelMap);
+	                  
+	    ModelAndView mav = new ModelAndView();
+	    mav.setViewName("admmgr/main");
+	    mav.addObject("rList",rList);
+		
 		
 		return mav;
 	}

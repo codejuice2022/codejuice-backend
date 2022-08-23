@@ -1,8 +1,10 @@
-package kr.co.admmgr.member;
+package kr.co.admmgr.member.impl;
 
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
+
+import kr.co.admmgr.member.LoginDAO;
 
 import java.util.Map;
 import java.util.List;
