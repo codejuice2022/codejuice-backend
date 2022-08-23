@@ -17,6 +17,7 @@
 
     <!-- Custom styles for this template-->
     <link href="/common/css/sb-admin-2.min.css" rel="stylesheet">
+    
 
 	<script type="text/javascript">
 		function fn_Login(){
@@ -67,7 +68,7 @@
                                                     Me</label>
                                             </div> -->
                                         </div>
-                                        <a href="javascript:fu_login();" class="btn btn-primary btn-user btn-block">
+                                        <a href="javascript:fn_Login();" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </a>
                                     </form>

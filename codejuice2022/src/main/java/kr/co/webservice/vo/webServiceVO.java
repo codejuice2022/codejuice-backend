@@ -1,6 +1,6 @@
 package kr.co.webservice.vo;
 
-public class testVO {
+public class webServiceVO {
 	private int id;
 	private String content;
 	

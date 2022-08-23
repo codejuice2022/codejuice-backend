@@ -11,7 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import kr.co.webservice.vo.testVO;
+import kr.co.webservice.vo.webServiceVO;
 
 /**
  * Handles requests for the application home page.
@@ -29,7 +29,7 @@ public class Login {
 		logger.info("Login! The client locale is {}.");
 		
 		
-		testVO testSelect = sqlSession.selectOne("test.selectTest");
+		webServiceVO testSelect = sqlSession.selectOne("webService.selectTest");
 		
 		System.out.println(testSelect.getId());
 		
@@ -41,7 +41,10 @@ public class Login {
 	@RequestMapping(value = "/admmgr/member/LoginProc.do")
 	public String LoginProc(HttpServletRequest request, HttpServletResponse response, ModelMap modelMap) {
 		
-		return "admmgr/index";
+		System.out.println("modelMAp : " + modelMap);
+		System.out.println("loginproc.do");
+		
+		return "admmgr/main";
 	}
 	
 }
