@@ -4,11 +4,6 @@
 
 <mapper namespace="webService">
 
-	<select id="selectTest" resultType="kr.co.webservice.vo.webServiceVO">
-		SELECT count(*) 'ID' FROM TB_ADMIN
- 	</select>
- 	
-
  	
  	<select id="selectUserScore" parameterType="java.util.Map"  resultType="map">
 		SELECT
@@ -24,36 +19,6 @@
 		
  	</select>
  	
- 	<insert id="insertUserInfo" parameterType = "map">
-		
-		INSERT INTO TB_USER (   
-		   USER_NM, 
-		   USER_HP 
-		) VALUES (
-		   ${userNm}, 
-		   ${userHp}
-		)
-
- 	</insert>
- 	
- 	<insert id="insertScore" parameterType = "map">
-		INSERT INTO TB_USER_GAME_SCORE (   
-		   USER_HP,    
-		   CENTER_INFO, 
-		   GAME_SCORE
-		) VALUES (
-		   ${userHp},
-		   ${enterInfo}, 
-		   ${gameScore}
-		)
- 	</insert>
-
-
-
-
-
-
-
 
 
  </mapper>

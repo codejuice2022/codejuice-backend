@@ -11,9 +11,8 @@ import kr.com.common.AbstractDAO;
 
 @Repository("LoginDAO")
 public class LoginDAO extends AbstractDAO{
-	public List selectUserSocre( Map map ) throws Exception {
-		System.out.println("map :" +map);
-    	return selectList("webService.selectUserScore",map);
+	public List selectUserSocre() throws Exception {
+    	return selectList("webService.selectUserScore");
     }
 
 }

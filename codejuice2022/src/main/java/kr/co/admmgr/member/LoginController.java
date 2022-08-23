@@ -32,10 +32,7 @@ public class LoginController {
 	/** LoginService */
 	@Autowired
 	private LoginService loginService;
-	
-	@Autowired
-	private SqlSession sqlSession;
-	
+
 	@RequestMapping(value = "/login.do")
 	public ModelAndView Login(HttpServletRequest request, HttpServletResponse response, ModelMap modelMap) {
 		logger.info("Login! The client locale is {}.");

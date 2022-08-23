@@ -16,7 +16,7 @@ public class LoginServiceImple  implements LoginService{
 	@Override
 	public List selectUserScoer(Map map) throws Exception {
 		// TODO Auto-generated method stub
-		return loginDAO.selectUserSocre(map);
+		return loginDAO.selectUserSocre();
 	}
 
 

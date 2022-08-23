@@ -4,14 +4,16 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.ibatis.logging.Log;
+import org.apache.ibatis.logging.LogFactory;
 import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class AbstractDAO {
 	protected Log log = LogFactory.getLog(AbstractDAO.class);
-
+	
+	@Autowired
 	private SqlSession sqlSession;
 
 	protected void printQueryId(String queryId) {
@@ -52,8 +54,9 @@ public class AbstractDAO {
 
 	@SuppressWarnings("rawtypes")
 	public List selectList(String queryId) {
-		printQueryId(queryId);
+		System.out.println("AbstractDAO : " + queryId);
 
+		printQueryId(queryId);
 		return sqlSession.selectList(queryId);
 	}
 
