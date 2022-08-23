@@ -9,8 +9,8 @@ import java.util.HashMap;
 
 import kr.com.common.AbstractDAO;
 
-@Repository("LoginDAO")
-public class LoginDAO extends AbstractDAO{
+@Repository("MainDAO")
+public class MainDAO extends AbstractDAO{
 	public List selectUserSocre() throws Exception {
     	return selectList("webService.selectUserScore");
     }

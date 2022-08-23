@@ -18,7 +18,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import kr.co.admmgr.member.impl.LoginService;
+import kr.co.admmgr.member.impl.MainService;
 
 
 /**
@@ -26,15 +26,15 @@ import kr.co.admmgr.member.impl.LoginService;
  */
 @Controller
 @RequestMapping("/admmgr/member/")
-public class LoginController {
+public class MainController {
 	
 	
 	
-	private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
+	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
 	
 	/** LoginService */
 	@Autowired
-	private LoginService loginService;
+	private MainService mailService;
 
 	@RequestMapping(value = "/login.do")
 	public ModelAndView Login(HttpServletRequest request, HttpServletResponse response, ModelMap modelMap) {
@@ -51,7 +51,7 @@ public class LoginController {
 		
 		List<Map<String, Object>> rList = new ArrayList<Map<String,Object>>();
 	    Map<String, Object> resultMap = new HashMap<String, Object>();
-	    rList = loginService.selectUserScoer(modelMap);
+	    rList = mailService.selectUserScoer(modelMap);
 	                  
 	    ModelAndView mav = new ModelAndView();
 	    mav.setViewName("admmgr/main");
